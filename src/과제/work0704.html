@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모든 체크박스 선택/해제</title>
+<style>
+#iconImg {
+width : 100px;
+height : 100px;
+}
+</style>
+</head>
+<body>
+	<hr>
+	<div> radio 버튼을 클릭하면 이미지가 바뀝니다.</div>
+	<form>
+	 <label><input type="radio" name="icon" value='image/image1.png'>image1 </label>
+	 <label><input type="radio" name="icon" value='image/image2.png' checked>image2 </label>
+	 <label><input type="radio" name="icon" value='image/image3.png'>image3 </label>
+	 <img src='image/image2.png' id="iconImg">	
+	</form>
+	
+<script>
+	var icon = document.getElementsByTagName('input');
+		for(var i=0; i< icon.length; i++){
+			icon[i].onclick = image;
+			//icon[i].addEventListener('click', image);
+			
+		}
+		
+		function image() {
+			var img = document.getElementById('iconImg');
+			for(var i=0; i< icon.length; i++){
+				if(icon[i].checked){
+				img.src = icon[i].value
+				}
+			}
+		}		
+</script>
+</body>
+</html>

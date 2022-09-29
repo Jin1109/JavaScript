@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 스크립스 내장 객체 - Datemath</title>
+</head>
+<body>
+<script>
+
+	//날짜 형식을 년도 4자리-달2자리-월2자리 맟추세요
+	 function Clock(){
+	    var today = new Date();
+	    var y4 = today.getFullYear(); //네자리 년도
+	    var m = today.getMonth() + 1; 
+	    var d = today.getDate(); //일
+	    var h = today.getHours();
+	    var mn = today.getMinutes();
+	    var s = today.getSeconds();
+	    var AmPm ="오전 ";
+	    if(h > 12){   
+	        var AmPm ="오후 ";
+	        h %= 12;
+	    }
+
+    
+    if(h == 12){ var pm = h;}
+    else{var pm = h%12;}
+    
+    var output = y4 + ". " + m + ". " + d + ". " + AmPm + pm + ":" + mn + ":" + s; 
+    
+    document.body.innerHTML = output;
+    
+	}
+    
+    Clock();
+    setInterval(Clock, 1000);
+
+</script>
+</body>
+</html>

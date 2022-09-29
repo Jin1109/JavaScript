@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex02032_screen1.html</title>
+<!-- screen객체는 웹 브라우저의 화면이 아니라 운영체제 화면의 속성을 갖고 있는 객체이다.
+	 		즉, 브라우저가 실해된느 스크린 장치에 대한 정보르 담고 있는 객체이다.
+	 screen객체의 모든 속을 출력해 본다.
+	 width : 화면의 너비, height : 화면의 높이
+	 availHeight : 작업표시줄을 제외한 화면의 높이
+	 availWidth	 : 작업표시줄을 제외한 화면의 너비
+ -->
+<script>
+	//출력합니다.
+	var output = '';
+	for (var key in screen) {
+		output += '●' + key + ':' + screen[key] + '<br>';
+	}
+	document.write(output);
+		/*
+			형식 : open(URL, name, option)
+			URL : 팝업창으로 보여줄 문서
+			name : 팝업창의 이름 (특별한 이름 : _blank, _self ..)
+			option : 옵션 (하나의 문자열안에 콤마로 속성들을 구분해서 작성)
+			
+		옵션 이름		설명						이별할 수있는 값
+		width		새 윈도우 넓이					픽셀 값
+		height		새 윈도우 높이					픽셀 값
+		menubar		메뉴 유무						yes, no
+		status		상태 표시줄의 유무				yes, no
+		resizeable	화면 크기 조절 가능 유무			yes, no
+		loacation   주소 입력창의 유무				yes, no
+		left		스크린상의 윈도우 x좌표			픽셀 값
+		top			스크린상의 윈도우 y좌표			픽셀 값
+		*/
+		window.status="하하:옵션 추가합니다.";
+		//변수를 선업합니다.
+		var child = window.open('ex02020_문서 객체 제거.html',
+								'_blank',
+								'width=300, height=200,munubar=yes, '
+							+	'status=yes, resizable=yes, location=yes');
+						//_self : 현재 페이지에서 열립니다.
+						//_blank : 새차엥서 열리빈다. (기본)
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>

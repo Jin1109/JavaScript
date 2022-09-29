@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/ex02062.css" type="text/css" rel="stylesheet">
+<title>ex02062_defaultevent_제거1.html</title>
+<!-- 
+		디폴트 이벤트 : 일부 HTML 태그는 이미 이벤트 리스너가 있습니다.
+		이런한 것을 티폴드 이벤트라고 합니다.
+		예를 들어 a태그는 클릭하면 다른 페이지로 이동하는데 이것이 a태그가 가진 디폴트 이벤트 입니다.
+		또한 입력 양식의 submit 버튼을 누르면 자동으로 입력 양식을 체출하고 페이지를
+		새로고침하는 것이 디폴트 이벤트입니다.
+		
+		디폴드 이벤트 제거하는 바업
+	1. obj.onsubmit = fuction(){
+				.....
+				return false;
+	   }
+	
+	2. event.preventDefault()를 사용하는 경우
+	   <a href="http://www.naver.com" onclick="event.preventDefault()">
+	   
+	3. function whenSubmit() {
+	   			...
+	   			return false;
+	   }     			
+	   <form onsubmit="return whenSubmit()">
+ -->
+</head>
+<body>
+
+<!-- 아무것도 입력하지 않고 체출을 클릭해 봅시다.  -->
+	<form id="my-form" action="ex02052_eventhandling_id.html">
+	 <fieldset>
+	  <legend>회원가입 폼</legend>
+	   <label for="name">이름</label>
+	   <input type="text" name="name" id="name"><br>
+	   
+	   <label for="pass">비밀번호</label>
+	   <input type="password" name="pass" id="pass"><br>
+	   
+	   <label for="pass-check">비밀번호 확인</label>
+	   <input type="password" name="pass-check"><br>
+	   
+	   <input type="submit" value="제출">
+	 </fieldset>
+	</form>
+</body>
+</html>

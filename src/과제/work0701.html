@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+   
+</head>
+<body>
+        이미지를 클릭하면 이미지가 바뀝니다. <br>
+    <img src="image/Koala.jpg" id="flower" 
+         width="500px"         height="500px">        
+<script>
+      //문서 객체를 가져옵니다.
+      var changeflower = document.getElementById('flower');
+      
+      var path = 'image/Hydrangeas.jpg';
+            
+      changeflower.addEventListener('click',function(){
+         
+      changeflower.src=path;         
+         
+      });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- ex02021_domaccess_2.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM Access</title>
+<style>
+	.change{
+		color:red;
+		background:yellow;
+		width:200px;
+		height:50px;
+		font-size:30px;
+	}
+</style>
+<script>
+	window.onclick = function(){
+		//getElementById()메소드를 이용해서 원하는 요소 객체에 접근할 수 있다.
+		var dom = document.getElementById("username");
+		
+		//input요소의 value속성값을 대화 상화에 보여줍니다.
+		alert(dom.value);
+		
+		var newValue = prompt("이름을 입력하세요", "");
+		//dom. value에  newValue변수값을 대입함으로써 <input>요소의
+		//value속성 값을 변경시킬 수 있다.
+		dom.value = newValue;
+		/*dom.style.color = 'red';
+		dom.style.background = "yellow";
+		dom.style.width = '200px'
+		dom.style.height = '50px';
+		dom.style['font-size'] = '30px'; */
+		dom.setAttribute('class', 'change');
+	}
+</script>
+</head>
+<body>
+이름 : <input id="username" type="text" value="사용자의 이름 :L2">
+</body>
+</html>

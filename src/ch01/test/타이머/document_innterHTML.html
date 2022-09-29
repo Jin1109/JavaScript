@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>익명 함수를 이용한 setInterVal()</title>
+</head>
+<body>
+<script>
+	function current() {
+			var today = new Date();
+			document.body.innerHTML=today.toLocaleString();
+	}
+	
+	setInterval(current, 1000);	
+</script>
+</body>
+</html>

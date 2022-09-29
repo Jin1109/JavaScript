@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바 스크립스 내장 객체 - Datemath</title>
+</head>
+<body>
+<script>
+
+   //날짜 형식을 년도 4자리-달2자리-월2자리 맟추세요
+   var answer = prompt("날짜를 입력하세요.", "2019-10-19");   
+    var input = new Date(answer);
+    var y4 = input.getFullYear(); //네자리 년도
+    var m = input.getMonth() + 1;
+    var d = input.getDate(); //일
+    var yoil = input.getDay();
+    var output = y4 + "년 " + m + "월 " + d + "일"; 
+    
+    var yoilarray = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
+
+    var color='black';
+    if(yoil==0){
+       color="red"
+    }else if(yoil==6){
+       color="blue"
+    }
+    
+    var pstyle = '<span style="font-weight:bold;color:' + color + '">'
+    output += pstyle + yoilarray[yoil] + '</span>';
+    
+    document.write(output + "<br>");
+</script>
+</body>
+</html>

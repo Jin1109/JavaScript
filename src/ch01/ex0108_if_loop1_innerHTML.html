@@ -1,0 +1,82 @@
+<!--
+다음과 같은 북 리스트가 존재하는 경우 주문할 책 수량을 입력받고 그 수량만큼 책 제목을 번호로
+선택해서 테이블로 출력합니다.
+
+참고)
+1. 책의 제목을 변수에
+   var book1 = "자바스크립트";
+   var book2 = "HTML";
+   var book3 = "CSS";
+   
+2. prompt()함수를 이용해서 "주문할 책 수량을 입력하세요?[1이상]"라는 문구가 나오고 수량을 입력합니다.
+
+3. 입력받은 값을 Number()를 이용해서 number 형으로 변환합니다.
+
+4. 만일 3번의 결과가 1이상이면 아래의 문장들을 수행합니다.
+   2번에서 입력 받은 값이 null인 경우 '취소를 선택하셨습니다.'라고 alert() 함수실행
+   그 외는 '형식에 맞게 입력하세요-숫자로 1이상을 입력합니다.' 라고 alert() 함수실행
+   
+5. 책 제목을 번호로 선택하세요...
+   1. 자바스크립트
+   2. HTML
+   3. CSS
+   
+   3번의 수량만큼 책 번호를 선택하게끔 반복합니다.
+   만약 범위에 없는 수를 입력하면 "리스트에 없는 책을 선택하셨습니다"라는 alert창을 띄우고
+   다시 입력 받습니다.
+   
+6. 책 수량만큼 입력받은 후 테이블을 이용해서 선택한 채그이 제목이 출력되도록 합니다.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Control 와 Loop</title>
+</head>
+<body>
+	<script>
+		var book1 = "자바스크립트";
+		var book2 = "HTML";
+		var book3 = "CSS";
+		var title;
+		var n = prompt("주문할 책 수량을 입력 하세요?[1이상]", "1");
+		var count=Number(n);
+		if(count>=1){
+			var list = "<table>";
+			list += "<caption> 책 주문 입력 내용 </caption>";
+			list += "<thead><tr>";
+			list += "<th> 순번 </th> <th> 제목 </th>";
+			list += "</tr></thead><tobody>";
+			
+			var book_list = "1." + book1 + "\n" + "2." + book2 + "\n" + "3." + book3;
+			for (var i = 1; i <= count; i++) {
+				var choice = prompt("책 제목을 번호로 선택하세요...\n" + book_list, "1");
+				if (choice == "1")
+					title = book1;
+				else if (choice == "2")
+					title = book2;
+				else if (choice == "3")
+					title = book3;
+				else {
+					alert("리스트에 없는 책을 선택하셨습니다.");
+					i--;
+					continue;
+				}
+				
+				list += "<tr>";
+				list += "<td>" + i + "</td>";
+				list += "<td>" + title + "</td>";
+				list += "</tr>";
+			}//for end
+			
+			list += "</tbody></table>";
+			
+			document.body.innerHTML = list;
+		}else if(n==null){
+			alert('취소를 선택하셨습니다.');
+		}else{
+			alert('형식에 맞게 입력하세요-숫자로 1이상을 입력합니다.')
+		}
+	</script>
+</body>
+</html>
